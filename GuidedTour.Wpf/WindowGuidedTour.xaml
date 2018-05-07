@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="GuidedTour.Wpf.WindowGuidedTour"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GuidedTour.Wpf"
+             mc:Ignorable="d" Height="116.489" Width="318.085">
+    <Grid x:Name="ContentGrid">
+        <Border BorderThickness="1" BorderBrush="Black">
+            <Label HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" FontWeight="Bold">WindowGuidedTour</Label>
+        </Border>
+    </Grid>
+</UserControl>

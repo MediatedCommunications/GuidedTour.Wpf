@@ -1,0 +1,116 @@
+﻿<Window x:Class="GuidedTour.Tests.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GuidedTour.Tests"
+        mc:Ignorable="d"
+        xmlns:tours="clr-namespace:GuidedTour.Wpf;assembly=GuidedTour.Wpf"
+        Title="MainWindow" Height="461.17" Width="999.468"
+        x:Name="ThisWindow"
+        >
+    <Window.CommandBindings>
+        <CommandBinding Command="{x:Static tours:Commands.NextFrame}" CanExecute="NextFrame_CanExecute" Executed="NextFrame_Execute"/>
+    </Window.CommandBindings>
+    <Grid x:Name="RootElement">
+        <Button x:Name="Button1" Content="Button" HorizontalAlignment="Left" Margin="59,98,0,0" VerticalAlignment="Top" Width="139" Height="41" Click="Button1_Click"/>
+        <Button x:Name="Button2" Content="Button" Margin="308,146,321,223" Click="Button2_Click"/>
+
+        <!--
+        <tours:GuidedTourPresenter >
+            <tours:GuidedTourPresenter.Frame>
+                <tours:GuidedTourFrame OverlayBrush="Black" OverlayOpacity=".7"/>
+            </tours:GuidedTourPresenter.Frame>
+        </tours:GuidedTourPresenter>
+        -->
+
+        <tours:WindowGuidedTour x:Name="GuidedTour" Margin="258,245,216,57">
+            <tours:WindowGuidedTour.Frames>
+                <!---
+                <tours:GuidedTourFrame FocusArea="{x:Reference Name=Button1}" OverlayBrush="Green" OverlayOpacity=".7">
+                    
+                </tours:GuidedTourFrame>
+                -->
+
+                <tours:Frame FocusArea="{x:Reference Name=RootElement}" FocusAreaBrush="Black" TourContentPlacement="Middle" TourContentCenterVertically="True" >
+                    <tours:Frame.TourContent>
+                        <Border Margin="0,20,0,0" CornerRadius="6" HorizontalAlignment="Left" VerticalAlignment="Top" Background="White">
+
+
+                            <StackPanel>
+                                <Label Content="This button will help you do stuff!" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="34" Width="399"/>
+                                <Button Command="{x:Static tours:Commands.NextFrame}">Sounds good!</Button>
+
+                            </StackPanel>
+                        </Border>
+                    </tours:Frame.TourContent>
+                </tours:Frame>
+
+                <tours:Frame FocusArea="{x:Reference Name=Button2}" TourContentPlacement="Bottom">
+                    <tours:Frame.TourContent>
+                        <Border BorderBrush="Red" Margin="0,20,0,0"  CornerRadius="6" HorizontalAlignment="Left" Height="167" VerticalAlignment="Top" Width="419" Background="White">
+
+
+                            <Grid>
+                                <Rectangle Fill="White" VerticalAlignment="Top" HorizontalAlignment="Center" Height="25" Width="25"  RenderTransformOrigin="0.5,0.5" Margin="-13">
+                                    <Rectangle.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="45"/>
+                                        </TransformGroup>
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+
+                                <Label Content="This button will help you do stuff!" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="34" Width="399"/>
+
+                            </Grid>
+                        </Border>
+                    </tours:Frame.TourContent>
+                </tours:Frame>
+
+                <tours:Frame FocusArea="{x:Reference Name=Button2}" TourContentPlacement="Left" TourContentCenterVertically="true">
+                    <tours:Frame.TourContent>
+                        <Border BorderBrush="Red" Margin="0,20,0,0"  CornerRadius="6" HorizontalAlignment="Left" Height="167" VerticalAlignment="Top" Width="419" Background="White">
+
+
+                            <Grid>
+                                <Rectangle Fill="White" VerticalAlignment="Top" HorizontalAlignment="Center" Height="25" Width="25"  RenderTransformOrigin="0.5,0.5" Margin="-13">
+                                    <Rectangle.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="45"/>
+                                        </TransformGroup>
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+
+                                <Label Content="This button will help you do stuff!" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="34" Width="399"/>
+
+                            </Grid>
+                        </Border>
+                    </tours:Frame.TourContent>
+                </tours:Frame>
+
+                <tours:Frame FocusArea="{x:Reference Name=Button2}" TourContentPlacement="Right" TourContentCenterVertically="False">
+                    <tours:Frame.TourContent>
+                        <Border BorderBrush="Red" Margin="0,20,0,0"  CornerRadius="6" HorizontalAlignment="Left" Height="167" VerticalAlignment="Top" Width="419" Background="White">
+
+
+                            <Grid>
+                                <Rectangle Fill="White" VerticalAlignment="Top" HorizontalAlignment="Center" Height="25" Width="25"  RenderTransformOrigin="0.5,0.5" Margin="-13">
+                                    <Rectangle.RenderTransform>
+                                        <TransformGroup>
+                                            <RotateTransform Angle="45"/>
+                                        </TransformGroup>
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+
+                                <Label Content="This button will help you do stuff!" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="34" Width="399"/>
+
+                            </Grid>
+                        </Border>
+                    </tours:Frame.TourContent>
+                </tours:Frame>
+
+            </tours:WindowGuidedTour.Frames>
+        </tours:WindowGuidedTour>
+
+    </Grid>
+</Window>
