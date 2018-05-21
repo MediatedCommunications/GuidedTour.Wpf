@@ -64,5 +64,15 @@ namespace GuidedTour.Tests {
             e.Handled = true;
             this.GuidedTour.MoveNext();
         }
+
+        private void Previous_CanExecute(object sender, CanExecuteRoutedEventArgs e) {
+            e.Handled = true;
+            e.CanExecute = true;
+
+        }
+
+        private void Previous_Execute(object sender, ExecutedRoutedEventArgs e) {
+            e.Handled = true;
+        }
     }
 }

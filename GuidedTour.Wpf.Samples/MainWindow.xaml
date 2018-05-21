@@ -10,7 +10,13 @@
         x:Name="ThisWindow"
         >
     <Window.CommandBindings>
+        <!--
         <CommandBinding Command="{x:Static tours:Commands.NextFrame}" CanExecute="NextFrame_CanExecute" Executed="NextFrame_Execute"/>
+        -->
+
+        <CommandBinding Command="{x:Static tours:Commands.NextFrame}" CanExecute="Previous_CanExecute" Executed="Previous_Execute" />
+        <CommandBinding Command="{x:Static tours:Commands.PreviousFrame}" CanExecute="Previous_CanExecute" Executed="Previous_Execute" />
+
     </Window.CommandBindings>
     <Grid x:Name="RootElement">
         <Button x:Name="Button1" Content="Button" HorizontalAlignment="Left" Margin="59,98,0,0" VerticalAlignment="Top" Width="139" Height="41" Click="Button1_Click"/>
@@ -25,7 +31,7 @@
         -->
 
         <tours:WindowGuidedTour x:Name="GuidedTour" Margin="258,245,216,57">
-            <tours:WindowGuidedTour.Frames>
+            <tours:WindowGuidedTour.Items>
                 <!---
                 <tours:GuidedTourFrame FocusArea="{x:Reference Name=Button1}" OverlayBrush="Green" OverlayOpacity=".7">
                     
@@ -39,6 +45,7 @@
 
                             <StackPanel>
                                 <Label Content="This button will help you do stuff!" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="34" Width="399"/>
+                                <local:UserControl1 HorizontalAlignment="Left" Height="100" Margin="115,373,0,-43" VerticalAlignment="Top" Width="100"/>
                                 <Button Command="{x:Static tours:Commands.NextFrame}">Sounds good!</Button>
 
                             </StackPanel>
@@ -109,8 +116,27 @@
                     </tours:Frame.TourContent>
                 </tours:Frame>
 
-            </tours:WindowGuidedTour.Frames>
+            </tours:WindowGuidedTour.Items>
         </tours:WindowGuidedTour>
+        <Grid HorizontalAlignment="Left" Height="251" Margin="675,111,0,0" VerticalAlignment="Top" Width="275">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <Canvas Grid.Column="1" VerticalAlignment="Bottom">
+                <Button Height="60" VerticalAlignment="Bottom" >asdf</Button>
+            </Canvas>
+
+
+        </Grid>
+
 
     </Grid>
 </Window>

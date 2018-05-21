@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GuidedTour.Wpf {
     class Win32 {
-
+         
         [Flags]
         public enum ExtendedWindowStyles {
             // ...

@@ -14,6 +14,7 @@ namespace GuidedTour.Wpf {
         public FrameworkElement AdornedControl;
         public Frame Frame { get; private set; }
         
+        
 
         public GuidedTourAdorner(FrameworkElement adornedElement, Frame Frame) : base(adornedElement) {
             this.AdornedControl = adornedElement;
