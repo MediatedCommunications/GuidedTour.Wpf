@@ -35,11 +35,15 @@ namespace GuidedTour.Wpf {
             var NewAdorner = default(GuidedTourAdorner);
             if (this.SelectedItem is Frame CurrentFrame) {
                 var FocusArea = CurrentFrame.FocusArea;
-                var NewLayer = AdornerLayer.GetAdornerLayer(FocusArea);
-                if(NewLayer != null) {
-                    NewAdorner = new GuidedTourAdorner(FocusArea, CurrentFrame);
+                if (FocusArea != null) {
 
-                    NewLayer.Add(NewAdorner);
+                    var NewLayer = AdornerLayer.GetAdornerLayer(FocusArea);
+                    if (NewLayer != null) {
+                        NewAdorner = new GuidedTourAdorner(FocusArea, CurrentFrame);
+
+                        NewLayer.Add(NewAdorner);
+                    }
+
                 }
             }
 
